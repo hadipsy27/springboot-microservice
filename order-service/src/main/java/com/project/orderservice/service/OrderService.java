@@ -7,12 +7,14 @@ import com.project.orderservice.model.OrderLineItems;
 import com.project.orderservice.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Transactional // Digunakan karena inventory service juga memiliki transaksi
 public class OrderService {
 
     private final OrderRepository orderRepository;
